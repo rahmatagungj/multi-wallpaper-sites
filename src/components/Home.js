@@ -2,12 +2,16 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "./Home.scss";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const [datas, setDatas] = useState([]);
   const [loading, setLoading] = useState(false);
   const { find } = useParams();
   const [failed, setFailed] = useState(false);
+
+  const capitalize = ([first, ...rest]) =>
+    first.toUpperCase() + rest.join("").toLowerCase();
 
   useEffect(() => {
     setLoading(true);
@@ -37,6 +41,11 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>{`Multi Wallpaper - ${
+          find ? capitalize(find) : "Rahmat Agung Julians"
+        }`}</title>
+      </Helmet>
       {loading && <div className="centered">Loading ...</div>}
       {failed && <div className="centered">Failed</div>}
       {datas && (
