@@ -1,0 +1,23 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px auto;
+  align-items: stretch;
+  justify-content: center;
+  img {
+    margin: 10px;
+    max-width: 34vw;
+    padding: 10px;
+    max-height: 30vh;
+    box-shadow: 0 10px 20px -10px rgba(0, 64, 128, 20);
+    transition: box-shadow 0.3s;
+    border-radius: 1em !important;
+  }
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
